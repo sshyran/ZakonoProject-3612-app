@@ -1,0 +1,148 @@
+// // Variables
+//
+// $primary: #cb3c29;
+// $primary-rgb: 239,96,77;
+// $secondary: #3e7f8b;
+// $secondary-rgb: 89,154,166;
+// $success: #57d685;
+// $success-rgb: 87,214,133;
+// $warning: #ffae00;
+// $warning-rgb: 255,174,0;
+// $alert: #ec5840;
+// $alert-rgb: 236,88,64;
+// $highlight: #be6400;
+// $highlight-rgb: 190,100,0;
+// $highlight-alternative: #ff5731;
+// $highlight-alternative-rgb: 255,87,49;
+//
+// $proposals: #238ff7;
+// $actions: #57d685;
+// $debates: #fa6c96;
+// $meetings: #fabc6c;
+//
+// $twitter: #55acee;
+// $facebook: #3b5998;
+// $google: #4285f4;
+//
+// // background colors used in public diff views
+// $color-addition: #e6ffed;
+// $color-removal: #ffeef0;
+
+@import "decidim/application";
+
+@import "fontface";
+
+$body-font-family: 'Rubik', Helvetica, Arial, sans-serif;
+$heading-font-family: 'Sahar', Helvetica, Arial, sans-serif;
+
+body, p, a, span {
+  font-family: $body-font-family;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font-family;
+}
+
+.title-bar {
+  background-color: var(--primary);
+}
+
+
+.initiative-types-select {
+  white-space: normal !important;
+  word-break: break-all !important;
+  overflow-wrap: break-word !important;
+
+  padding-bottom: 0;
+
+  option {
+      position: relative;
+      display: block;
+      margin: 0 -15px 5px  0;
+      padding: 5px 10px;
+      font-size: 90%;
+      line-height: 17px;
+      color: $secondary;
+      border: 1px solid #e8e8e8;
+      border-radius: 3px;
+      cursor: pointer;
+      white-space: normal !important;
+      word-break: break-all !important;
+      overflow-wrap: break-word !important;
+      text-overflow: clip;
+      overflow-x: hidden;
+
+      &:hover {
+        background: #e8e8e8;
+      }
+  }
+
+  &:focus {
+    border-color: #238FF7;
+    option:checked {
+      background: #238FF7;
+      color: white;
+    }
+  }
+}
+
+.highlighted_proposals .card--proposal {
+  width: 100%;
+}
+
+// Hide autorisation handler profile tab
+// #user-settings-tabs > li:nth-child(3) {
+//   display: none;
+// }
+
+.main-footer__badge {
+  text-align: center;
+}
+
+@media print, screen and (min-width: 64em) {
+  .main-footer__badge {
+    position: relative;
+    text-align: left;
+  }
+}
+
+.topbar div {
+  align-items: center;
+}
+
+.main-footer .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mini-footer .row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .decidim-logo {
+    display: flex;
+    flex-grow: 0;
+    width: auto;
+    margin: 0 .5rem;
+  }
+
+  img {
+    height: 1rem;
+    margin-top: -0.25rem;
+  }
+
+  .mf-text {
+    font-size: 80%;
+    line-height: 1rem;
+
+    a {
+      font-weight: 600;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
