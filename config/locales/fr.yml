@@ -1,0 +1,240 @@
+---
+fr:
+  activemodel:
+    attributes:
+      participatory_process:
+        private_space: Espace privé
+      osp_authorization_handler:
+        document_number: Numéro du logement
+        postal_code: Code postal
+        birthday: Date de naissance
+      participatory_process:
+        participatory_process_group_id: Groupe de résidences
+        promoted: Mise en avant
+      participatory_process_group:
+        participatory_process_ids: Résidences liées
+    models:
+      decidim/proposals/accepted_proposal_event: Proposition soumise au vote
+      decidim/proposals/rejected_proposal_event: Proposition non recevable
+  decidim:
+    admin:
+      actions:
+        new: Nouveau
+      menu:
+        participatory_process_groups: Groupes de résidences
+        participatory_processes: Résidences
+        participatory_processes_submenu:
+          process_admins: Administrateurs de la résidence
+      models:
+        participatory_process:
+          fields:
+            created_at: Créée le
+            promoted: Mise en évidence
+            published: Publiée
+          name: Résidence
+        participatory_process_group:
+          name: Groupes de résidences
+        participatory_process_user_role:
+          name: Rôle utilisateur de la résidence
+      participatory_processes:
+        new:
+          title: nouvelle résidence
+        create:
+          error: Une erreur s'est produite lors de la création d'une nouvelle résidence.
+          success: Résidence créée avec succès. Configurez maintenant ses étapes.
+        destroy:
+          success: Résidence supprimée avec succès.
+        index:
+          not_published: Non publiée
+          published: Publiée
+          title: Nouvelle résidence
+        update:
+          error: Une erreur s'est produite lors de la mise à jour de cette résidence.
+          success: Résidence mise à jour avec succès.
+      participatory_process_copies:
+        new:
+          title: Dupliquer la résidence
+      participatory_process_groups:
+        destroy:
+          success: Le groupe de résidences a été détruit avec succès.
+        edit:
+          title: Modifier le groupe de résidences
+        new:
+          title: Nouveau groupe de résidences
+        update:
+          error: Il y a eu une erreur lors de la mise à jour de ce groupe de résidences.
+          success: Groupe de résidences mis à jour avec succès.
+      participatory_process_publications:
+        create:
+          error: Une erreur s'est produite lors de la publication de cette résidence.
+          success: Résidence publiée avec succès.
+        destroy:
+          error: Une erreur s'est produite lors de la publication de cette résidence.
+          success: Résidence supprimée avec succès.
+      participatory_process_step_activations:
+        create:
+          error: Une erreur s'est produite lors de l'activation de cette étape de la résidence.
+          success: Etape de la résidence activée avec succès.
+      participatory_process_steps:
+        create:
+          error: Une erreur s'est produite lors de la création d'une nouvelle étape de la résidence.
+          success: Etape de la résidence créée avec succès.
+        default_title: Introduction
+        destroy:
+          error:
+            active_step: Vous ne pouvez pas supprimer l'étape active de la résidence.
+            last_step: Vous ne pouvez pas supprimer la dernière étape d'une résidence.
+          success: L'étape de la résidence a été supprimée avec succès.
+        edit:
+          title: Modifier l'étape de la résidence
+        index:
+          steps_title: Etapes
+        new:
+          title: Nouvelle étape de la résidence
+        ordering:
+          error: Une erreur s'est produite lors de la réorganisation des étapes de la résidence.
+        update:
+          error: Une erreur s'est produite lors de la mise à jour de cette étape de la résidence.
+          success: Etape de la résidence mise à jour avec succès.
+      participatory_process_user_roles:
+        create:
+          error: Une erreur s'est produite lors de l'ajout d'un utilisateur pour cette résidence.
+          success: Utilisateur créé avec succès pour cette résidence.
+        destroy:
+          success: L'utilisateur a été supprimé avec succès pour cette résidence.
+        edit:
+          title: Mettre à jour l'utilisateur de la résidence.
+        index:
+          process_admins_title: Administrateurs de la résidence
+        new:
+          title: Nouvel utilisateur de la résidence.
+        update:
+          error: Une erreur s'est produite lors de la mise à jour d'un utilisateur pour cette résidence.
+          success: L'utilisateur a été mis à jour avec succès pour cette résidence.
+      participatory_processes_copies:
+        create:
+          error: Une erreur s'est produite lors de la duplication de cette résidence.
+          success: Résidence dupliquée avec succès.
+      participatory_processes_group:
+        create:
+          error: Une erreur s'est produite lors de la création d'un nouveau groupe de résidences.
+          success: Groupe de résidences créé avec succès.
+      titles:
+        navbar_links: Liens de navigation
+        participatory_process_groups: Groupes de résidences
+        participatory_processes: Résidences
+    application:
+      documents:
+        related_documents: Documents à consulter
+    authorization_handlers:
+      osp_authorization_handler:
+        explanation: Obtenir une vérification en saisissant un numéro de logement
+        fields:
+          document_number: Numéro du logement
+          postal_code: Code postal
+          birthday: Date de naissance
+        name: Formulaire de vérification d'identité
+      osp_authorization_workflow:
+        name: Procédure d'autorisation
+    devise:
+      registrations:
+        new:
+          sign_up_as:
+            user: Citoyen
+          subtitle: Inscrivez-vous pour participer et débattre sur la plateforme.
+    events:
+      proposals:
+        proposal_accepted:
+          email_intro: 'La proposition "%{resource_title}" est soumise au vote. Vous pouvez lire la réponse sur cette page :'
+          email_outro: Vous venez de recevoir cette notification parce que vous suivez "%{resource_title}". Vous pouvez à tout moment arrêter de la suivre en cliquant sur ce dernier lien.
+          email_subject: Une proposition que vous suivez est soumise au vote
+          notification_title: La proposition <a href="%{resource_path}">%{resource_title}</a> est soumise au vote.
+        proposal_rejected:
+          email_intro: 'La proposition "%{resource_title}" n''a pas été jugée recevable. Vous pouvez lire le commentaire ici :'
+          email_outro: Vous avez reçu cette notification parce que vous suivez "%{resource_title}". Vous pouvez cesser de le suivre en allant sur le lien précédent.
+          email_subject: Une proposition que vous suivez n'a pas été jugée recevable
+          notification_title: La proposition <a href="%{resource_path}">%{resource_title}</a> n'a pas été jugée recevable.
+    proposals:
+      admin:
+        proposal_answers:
+          edit:
+            accepted: Soumise au vote
+            rejected: Non recevable
+      answers:
+        accepted: Soumise au vote
+        rejected: Non recevable
+      proposals:
+        filters:
+          accepted: Soumises au vote
+          except_rejected: Toutes sauf les propositions non recevables
+          rejected: Non recevables
+        show:
+          proposal_accepted_reason: 'Cette proposition est soumise au vote parce que :'
+          proposal_rejected_reason: 'Cette proposition n''a pas été jugée recevable parce que :'
+    menu:
+      processes: Accéder à ma résidence
+    participatory_process_groups:
+      show:
+        group_participatory_processes: 'Résidences pour %{group}'
+        title: Groupes de résidences
+    participatory_process_steps:
+      index:
+        process_steps: Etapes de la résidence
+        title: Etapes de la résidence
+    participatory_processes:
+      admin:
+        participatory_process_copies:
+          form:
+            slug_help: 'Les identifiants d''URL sont utilisés pour générer les URL qui envoient vers cette résidence. N''accepte que des lettres, des chiffres et des tirets et doit commencer par une lettre. Exemple: %{url}'
+        participatory_processes:
+          form:
+            slug_help: 'Les identifiants d''URL sont utilisés pour générer les URL qui envoient vers cette résidence. N''accepte que des lettres, des chiffres et des tirets et doit commencer par une lettre. Exemple: %{url}'
+      index:
+        title: Résidences
+      order_by_processes:
+        active: Actives
+        all: Toutes
+        past: Passées
+      pages:
+        home:
+          highlighted_processes:
+            active_processes: Résidences en cours
+            see_all_processes: Voir toutes les résidences
+    verifications:
+      authorizations:
+        first_login:
+          actions:
+            osp_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
+            osp_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
+  devise:
+    failure:
+      user:
+        already_authenticated: Vous êtes déjà connecté.
+        inactive: Votre compte n'est pas encore activé.
+        invalid: "%{authentication_keys} ou mot de passe invalide."
+        invited: Vous avez une invitation en attente, acceptez-la pour terminer la création de votre compte.
+        last_attempt: Vous avez encore une tentative avant que votre compte soit verrouillé.
+        locked: Ton compte est bloqué.
+        not_found_in_database: "%{authentication_keys} ou mot de passe invalide."
+        timeout: Votre session a expiré. Veuillez vous connecter à nouveau pour continuer.
+        unauthenticated: Vous devez vous connecter ou vous inscrire avant de continuer.
+    invitations:
+      edit:
+        submit_button: Sauvegarder
+  layouts:
+    decidim:
+      assembly_header:
+        assembly_menu_item: Présentation
+      participatory_processes:
+        index:
+          promoted_processes: Résidences mises en avant
+        order_by_processes:
+          processes:
+            one: '%{count} résidence'
+            other: '%{count} résidences'
+      process_header:
+        process_menu_item: Présentation
+  pages:
+    home:
+      extended:
+        how_to_participate: Comment participer ?
