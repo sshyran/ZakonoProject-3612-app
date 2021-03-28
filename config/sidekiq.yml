@@ -1,0 +1,11 @@
+:concurrency: 5
+:queues:
+- default
+- mailers
+- newsletter
+- events
+
+:schedule:
+  CalculateAllMetrics:
+    every: ['24h', first_in: '10m']
+    class: CalculateAllMetricsJob
