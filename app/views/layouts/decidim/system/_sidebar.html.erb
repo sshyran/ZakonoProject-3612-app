@@ -1,0 +1,17 @@
+<div class="title">
+  <h1>
+    <%= link_to root_path do %>
+      <%= title %>
+    <% end %>
+  </h1>
+</div>
+
+<%= main_menu.render %>
+
+<nav class="secondary-nav">
+  <ul><%= link_to t(".sidekiq"), "/sidekiq" %></ul>
+  <ul><%= link_to t(".pghero"), "/pghero" %></ul>
+  <ul><%= link_to t(".split"), "/split" %></ul>
+</nav>
+
+<%= render partial: "layouts/decidim/system/login_items" %>

@@ -1,0 +1,13 @@
+:concurrency: 5
+:queues:
+- default
+- mailers
+- newsletter
+- events
+
+:schedule:
+  CaptureQueryStats:
+    every: ['10m', first_in: '10m']
+    class: CaptureQueryStatsJob
+
+
