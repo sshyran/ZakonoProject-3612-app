@@ -1,0 +1,66 @@
+---
+fr:
+  decidim:
+    admin:
+      models:
+        user:
+          fields:
+            roles:
+              participant: Participant
+    authorization_handlers:
+      admin:
+        direct_verifications:
+          help:
+          - 'Permet l'ajout massif d'utilisateur dans le but de :'
+          - Directement enregistrer les participants dans l'orgnisation et de leur envoyer des invitations
+          - Vérifier ces participants dans l'une des méthodes de vérification active
+          - Révoquer leurs vérifications dans l'une des méthodes de vérification active
+      direct_verifications:
+        explanation: Vérification manuelle par les administrateurs de l'organisation
+        name: Vérification directe
+    direct_verifications:
+      verification:
+        admin:
+          direct_verifications:
+            create:
+              authorized: "%{authorized} participants ont été vérifiés avec succès grâce à 
+                [%{handler}] (%{count} détectés, %{errors} erreurs)"
+              info: "%{count} participants détectés, dont %{registered} sont inscrits et
+                %{authorized} vérifiés via [%{handler}] (%{unconfirmed} non confirmés)"
+              registered: "%{registered} participants ont été enregistrés avec succès, (%{count}
+                détectés, %{errors} erreurs) "
+              revoked: La vérificaiton des %{revoked} participants a été supprimée à l'aide de 
+                [%{handler}] (%{count} détectés, %{errors} erreurs)
+            gdpr_disclaimer: Cette action est sous votre responsabilité. Souvenez-vous que vous devez disposer du consentement explicite
+                de vos utilisateurs avant de les inscrire. Dans le cas contraire, vous enfreindriez le RGPD dans les pays de l'Union européenne.  
+          index:
+            stats: Statistiques utilisateurs
+            title: Inscrire et vérifier des utilisateurs
+          new:
+            authorization_handler: Méthode de vérification
+            authorize: Valider les utilisateurs
+            check: Vérifier le statut des utilisateurs de cette liste (combien sont inscrits, combien vérifiés, ...)
+            info: Entrez les emails ici, ligne par ligne. Si les emails sont précédés d'un texte, celui-ci sera interprété comme le nom utilisateur. 
+            register: Inscrire les utilisateurs sur la plateforme (s'ils existent déjà ils seront ignorés)
+            revoke: Révoquer les autorisations
+            submit: Envoyer et traiter la liste
+            textarea: Liste d'emails
+          stats:
+            index:
+              authorized: Autorisés
+              authorized_unconfirmed: Autorisés mais non confirmés
+              global: "- Toutes les méthodes de vérification -"
+              registered: Inscrits
+              unconfirmed: Non confirmés
+        authorizations:
+          new:
+            no_action: Cette action nécessite qu'un administrateur autorise votre compte
+    verifications:
+      authorizations:
+        first_login:
+          actions:
+            direct_verifications: Vérification directe
+  devise:
+    mailer:
+      direct_invite:
+        subject: Instructions d'invitation
