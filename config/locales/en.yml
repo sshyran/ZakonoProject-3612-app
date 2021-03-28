@@ -1,0 +1,75 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  decidim:
+    authorization_handlers:
+      admin:
+        cas:
+          help:
+            - Validate with an external CAS account
+        decidim:
+          help:
+            - Validate with an external Decidim account
+      cas:
+        fields:
+          status: status
+        name: IDNUM student
+        explanation: Validate with an external IDNUM student account
+      decidim:
+        fields:
+          status: status
+        name: Decidim SSO
+        explanation: Validate with an external Decidim account
+      osp_authorization_handler:
+        explanation: Validate with a unique ID number
+        fields:
+          document_number: Unique ID
+          postal_code: Postal code
+          birthday: Birthdate
+        name: Identity verification form
+      osp_authorization_workflow:
+        name: Authorization process
+    system:
+      organizations:
+        omniauth_settings:
+          cas:
+            host: External service host (without http(s)://)
+            provider_name: External service name
+          decidim:
+            client_id: Client ID
+            client_secret: Client secret
+            provider_name: External service name
+            site_url: External service URL (with http(s)://)
+  layouts:
+    decidim:
+      footer:
+        download_open_data: Open data

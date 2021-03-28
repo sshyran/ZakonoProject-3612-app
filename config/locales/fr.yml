@@ -1,0 +1,85 @@
+fr:
+  activemodel:
+    attributes:
+      participatory_process:
+        private_space: Espace privé
+      osp_authorization_handler:
+        document_number: Numéro unique
+        postal_code: Code postal
+        birthday: Date de naissance
+  decidim:
+    authorization_handlers:
+      admin:
+        cas:
+          help:
+            - Confirmer une identité avec un compte IDNUM
+        cas_student:
+          help:
+            - Confirmer une identité avec un compte IDNUM étudiant
+        decidim:
+          help:
+            - Confirmer une identité avec un compte Decidim externe
+      cas:
+        fields:
+          status: votre statut
+        name: IDNUM
+        explanation: Confirmer votre identité avec un compte IDNUM
+      cas_student:
+        fields:
+          status: votre statut
+        name: IDNUM étudiant
+        explanation: Confirmer votre identité avec un compte IDNUM
+      decidim:
+        fields:
+          status: votre statut
+        name: Decidim SSO
+        explanation: Confirmer votre identité avec un compte Decidim externe
+      osp_authorization_handler:
+        explanation: Vérifier votre identité en saisissant un numéro unique
+        fields:
+          document_number: Numéro unique
+          postal_code: Code postal
+          birthday: Date de naissance
+        name: Formulaire de vérification d'identité
+      osp_authorization_workflow:
+        name: Procédure d'autorisation
+    authorization_modals:
+      content:
+        unauthorized:
+          explanation: Désolé, vous ne pouvez pas effectuer cette action.
+          invalid_field: "%{field} \"%{value}\" n'est pas valide."
+          ok: Fermer
+          title: Action impossible
+    proposals:
+      proposals:
+        count:
+          proposals_count:
+            one: "%{count} proposition"
+    system:
+      organizations:
+        omniauth_settings:
+          cas:
+            host: Hôte du serveur distant (sans http(s)://)
+            provider_name: Nom du service distant
+          decidim:
+            client_id: Client ID
+            client_secret: Client secret
+            provider_name: Nom du service distant
+            site_url: URL du serveur distant (avec http(s)://)
+    verifications:
+      authorizations:
+        first_login:
+          actions:
+            cas: Confirmer votre identité avec un compte IDNUM
+            cas_student: Confirmer votre identité avec un compte IDNUM étudiant
+            decidim: Confirmer votre identité avec un compte Decidim externe
+            osp_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
+            osp_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
+  devise:
+    shared:
+      links:
+        signed_in_with_provider: "Authentifié(e) avec %{provider} <br/>"
+  layouts:
+    decidim:
+      footer:
+        download_open_data: Données ouvertes
