@@ -1,0 +1,162 @@
+fr:
+  activemodel:
+    attributes:
+      participatory_process:
+        participatory_process_group_id: Groupe de consultations
+      participatory_process_group:
+        participatory_process_ids: Consultations liées
+  errors:
+    messages:
+      invalid_participatory_process: Consultation invalide
+  decidim:
+    admin:
+      menu:
+        participatory_process_groups: Groupes de consultations
+        participatory_processes: Consultations
+        participatory_processes_submenu:
+          process_admins: Administrateurs de la consultation
+      models:
+        participatory_process:
+          name: Consultation
+        participatory_process_group:
+          name: Groupes de consultations
+        participatory_process_step:
+          name: Étape de la consultation
+        participatory_process_user_role:
+          name: Rôle utilisateur de la consultation
+      participatory_process_copies:
+        new:
+          title: Dupliquer la consultation
+      participatory_process_groups:
+        destroy:
+          success: Le groupe de consultations a été détruit avec succès.
+        edit:
+          title: Modifier le groupe de consultations
+        new:
+          title: Nouveau groupe de consultations
+        update:
+          error: Il y a eu une erreur lors de la mise à jour de ce groupe de consultations.
+          success: Groupe de consultations mis à jour avec succès.
+      participatory_process_publications:
+        create:
+          error: Une erreur s'est produite lors de la publication de cette consultation.
+          success: Consultation publiée avec succès.
+        destroy:
+          error: Une erreur s'est produite lors de la publication de cette consultation.
+          success: Consultation dépubliée avec succès.
+      participatory_process_step_activations:
+        create:
+          error: Une erreur s'est produite lors de l'activation de cette étape de la consultation.
+          success: Étape de la consultation activée avec succès.
+      participatory_process_steps:
+        create:
+          error: Une erreur s'est produite lors de la création d'une nouvelle étape de la consultation.
+          success: Étape de la consultation créée avec succès.
+        destroy:
+          error:
+            active_step: Vous ne pouvez pas supprimer l'étape active de la consultation.
+            last_step: Vous ne pouvez pas supprimer la dernière étape d'une consultation.
+          success: L'étape de la consultation a été supprimée avec succès.
+        edit:
+          title: Modifier l'étape de la consultation
+        new:
+          title: Nouvelle étape de la consultation
+        ordering:
+          error: Une erreur s'est produite lors de la réorganisation des étapes de la consultation.
+        update:
+          error: Une erreur s'est produite lors de la mise à jour de cette étape de la consultation.
+          success: Étape de la consultation mise à jour avec succès.
+      participatory_process_user_roles:
+        create:
+          error: Une erreur s'est produite lors de l'ajout d'un utilisateur pour cette consultation.
+          success: Utilisateur créé avec succès pour cette consultation.
+        destroy:
+          success: L'utilisateur a été supprimé avec succès pour cette consultation.
+        edit:
+          title: Mettre à jour l'utilisateur de la consultation.
+          update: Mettre à jour
+        index:
+          process_admins_title: Administrateurs de la consultation
+        new:
+          title: Nouvel utilisateur de la consultation.
+        update:
+          error: Une erreur s'est produite lors de la mise à jour d'un utilisateur pour cette consultation.
+          success: L'utilisateur a été mis à jour avec succès pour cette consultation.
+      participatory_processes:
+        create:
+          error: Une erreur s'est produite lors de la création d'une nouvelle consultation.
+          success: Consultation créée avec succès. Configurez maintenant ses étapes.
+        destroy:
+          success: Consultation supprimée avec succès.
+        new:
+          title: Nouvelle consultation
+        update:
+          error: Une erreur s'est produite lors de la mise à jour de cette consultation.
+          success: Consultation mise à jour avec succès.
+      participatory_processes_copies:
+        create:
+          error: Une erreur s'est produite lors de la duplication de cette consultation.
+          success: Consultation dupliquée avec succès.
+      participatory_processes_group:
+        create:
+          error: Une erreur s'est produite lors de la création d'un nouveau groupe de consultations.
+          success: Groupe de consultations créé avec succès.
+      titles:
+        participatory_process_groups: Groupes de consultations
+        participatory_processes: Consultations
+    admin_log:
+      participatory_process:
+        create: "%{user_name} a créé la consultation %{resource_name}"
+        publish: "%{user_name} a publié la consultation %{resource_name}"
+        unpublish: "%{user_name} a non publié la consultation %{resource_name}"
+        update: "%{user_name} a mis à jour la consultation %{resource_name}"
+      participatory_process_step:
+        activate: "%{user_name} a activé l'étape %{resource_name} dans la consultation %{space_name}"
+        create: "%{user_name} a créé l'étape %{resource_name} dans la consultation %{space_name}"
+        delete: "%{user_name} a supprimé l'étape %{resource_name} de la consultation %{space_name}"
+        update: "%{user_name} a mis à jour l'étape %{resource_name} de la consultation %{space_name}"
+      participatory_process_user_role:
+        create: "%{user_name} a invité l'utilisateur %{resource_name} à la consultation %{space_name}"
+        delete: "%{user_name} a supprimé l'utilisateur %{resource_name} à partir de la consultation %{space_name}"
+        update: "%{user_name} a changé le rôle de l'utilisateur %{resource_name} dans la consultation %{space_name}"
+    menu:
+      processes: Consultations
+    participatory_process_groups:
+      show:
+        group_participatory_processes: Consultations pour %{group}
+        title: Groupes de consultations
+    participatory_process_steps:
+      index:
+        process_steps: Étapes de la consultation
+        title: Étapes de la consultation
+    participatory_processes:
+      admin:
+        participatory_process_copies:
+          form:
+            slug_help: 'Les identifiants d''URL sont utilisés pour générer les URL qui envoient vers cette consultation. N''accepte que des lettres, des chiffres et des tirets et doit commencer par une lettre. Exemple: %{url}'
+        participatory_processes:
+          form:
+            announcement_help: Le texte saisi ici sera affiché juste en dessous des informations de la consultation.
+            slug_help: 'Les identifiants d''URL sont utilisés pour générer les URL qui envoient vers cette consultation. N''accepte que des lettres, des chiffres et des tirets et doit commencer par une lettre. Exemple: %{url}'
+      index:
+        title: Consultation
+      pages:
+        home:
+          highlighted_processes:
+            active_processes: Consultations actives
+            see_all_processes: Voir toutes les consultations
+      statistics:
+        processes_count: Consultations
+  layouts:
+    decidim:
+      participatory_processes:
+        index:
+          promoted_processes: Consultations mises en avant
+        order_by_processes:
+          processes:
+            one: "%{count} consultation"
+            other: "%{count} consultations"
+  pages:
+    home:
+      statistics:
+        processes_count: Consultations
