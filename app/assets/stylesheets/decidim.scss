@@ -1,0 +1,678 @@
+// DECIDIM VARIABLES
+
+// $primary: #ef604d;
+$primary: #2b3951;
+// $secondary: #599aa6;
+$secondary: #e94b4e;
+// $success: #57d685;
+// $warning: #ffae00;
+// $alert: #ec5840;
+//
+// $proposals: #238FF7;
+// $actions: #57D685;
+// $debates: #FA6C96;
+// $meetings: #FABC6C;
+//
+// $twitter: #55acee;
+// $facebook: #3b5998;
+// $google: #dd4b39;
+
+// Load Decidim core file
+@import "decidim/application";
+
+// ------------------------------------------------------------------
+// CUSTOM VARIABLES
+
+$title-bar-background: #FFFFFF;
+$title-user-bar-background: darken( $title-bar-background, 10%);
+
+$official_color_blue: #012e54;
+$official_color_white: white;
+$official_color_red: #e44052;
+
+// ------------------------------------------------------------------
+// FONT
+
+@import "fontface";
+
+// TODO : PR on decidim-core/app/assets/stylesheets/decidim/utils/_settings.scss to add !default on this variable.
+$body-font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+
+body, h1, h2, h3, h4, h5, h6, p, a, span {
+  font-family: $body-font-family;
+}
+
+// ------------------------------------------------------------------
+// MAIN LAYOUT
+
+// ------------------------------------------------------------------
+// TOPBAR
+
+.title-bar {
+  background: $title-bar-background;
+  color: $dark-gray;
+  padding: 0 0 1rem;
+
+  @media screen and (max-width: 39.9375em) {
+    border: none;
+  }
+}
+
+.off-canvas {
+  background: white;
+  border-left: 1px solid $medium-gray;
+
+  &.position-right.is-transition-push {
+    box-shadow: none;
+  }
+}
+
+.title-user-bar {
+  background-color: $medium-gray;
+  padding: .5rem 0;
+
+  .topbar {
+    min-height: 42px;
+    vertical-align: middle;
+  }
+}
+
+// .topbar__notifications,
+// .topbar__conversations {
+//   border-right: 1px solid lighten($dark-gray, 20%);
+//   height: 90%;
+//   padding: .5rem 1rem;
+//   vertical-align: middle;
+//
+//   .icon {
+//     fill: $dark-gray;
+//     opacity: 1;
+//   }
+//
+//   &:hover .icon {
+//     fill: $official_color_red;
+//   }
+// }
+
+.topbar__notifications,
+.topbar__conversations { display: none; }
+
+
+.topbar__user__login a {
+  color: lighten($dark-gray, 20%);
+}
+
+.topbar__dropmenu .dropdown {
+  margin-right: 1rem;
+}
+
+.topbar__dropmenu > ul > li > a {
+  color: $dark-gray;
+
+  &:hover, &:active {
+    color: $secondary;
+  }
+
+  &::after{
+    margin-top: -1px !important;
+    border-top-color: $dark-gray !important;
+  }
+}
+
+.topbar__dropmenu .is-dropdown-submenu li {
+  a {
+    color: darken($secondary, 10%);
+  }
+
+  &:hover a {
+    color: $secondary;
+  }
+}
+
+.topbar__user__logged {
+  .menu li {
+    display: block;
+  }
+
+  .dropdown.menu > li.is-dropdown-submenu-parent {
+    & > a.user-menu {
+      display: flex ;
+      align-items: center;
+      padding: 0 1rem 0 0;
+
+      .user-menu--icon {
+        .icon {
+          width: 2.5em;
+          height: 2.5em;
+        }
+      }
+
+      .user-menu--label {
+        font-size: .65rem;
+        margin: 0 .5rem;
+
+        b {
+          font-size: .85rem;
+          line-height: 1rem;
+        }
+      }
+
+      &::after {
+        display: block;
+        top: 45%;
+      }
+
+      &:hover::after { border-top-color: $secondary !important; }
+
+      &.text-only::after {
+        right: 0 ;
+      }
+    }
+
+    &.is-active > a.user-menu::after { border-top-color: $secondary !important; }
+
+    .is-dropdown-submenu {
+      margin-top: .75rem;
+      min-width: 100%;
+
+      .is-dropdown-submenu-item {
+        text-align: center;
+        text-transform: uppercase;
+        padding: .15rem 0;
+        font-size: 90%;
+
+        &.small a {
+          color: $primary;
+          font-variant: small-caps;
+        }
+      }
+    }
+  }
+}
+
+.topbar__edit__link {
+
+  a {
+    border-left: 1px solid lighten($dark-gray, 20%);
+    height: 90%;
+    padding: .5rem 1rem;
+  }
+
+  .icon {
+    fill: $dark-gray;
+
+    &:hover {
+      fill: $official_color_red;
+    }
+  }
+
+  span { display: none; }
+}
+
+.dropdown.menu .is-active > a {
+  color: $secondary;
+}
+
+.title-menu-bar {
+  padding-top: 1rem;
+
+  .topbar {
+    justify-content: space-between;
+  }
+}
+
+.logo-wrapper {
+  flex-grow: 1;
+
+  @media print, screen and (min-width: 40em) {
+    flex-grow: 0;
+  }
+
+  a {
+    display: inline-block;
+    align-items: center;
+
+    img {
+      display: flex;
+      margin-right: .5rem;
+    }
+
+    span{
+      display: flex;
+      color: $dark-gray;
+      font-weight: 600;
+      font-size: 1.4em;
+      border-left: 2px solid $title-user-bar-background;
+      text-align: left;
+      padding: .5rem;
+      line-height: 1;
+      position: relative;
+    }
+  }
+
+  img {
+    max-height: 65px;
+
+    @media screen and (min-width: 50em) {
+      max-height: 75px;
+    }
+  }
+}
+
+div[data-set="nav-holder"] {
+  flex-grow: 1;
+}
+
+@media print, screen and (min-width: 40em) {
+  .logo-cityhall {
+    margin-top: -2px;
+  }
+}
+
+.navbar {
+  background: $title-bar-background;
+}
+
+@media print, screen and (min-width: 40em) {
+  .main-nav ul {
+    justify-content: center;
+
+    li {
+      flex: 0;
+      border-right: 1px solid $title-user-bar-background;
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+}
+
+
+.main-nav__link a {
+  color: $official_color_blue;
+  &:hover, &:focus {
+    background: none;
+    color: $official_color_red;
+  }
+}
+
+.main-nav__link--active a {
+  color: $official_color_red;
+  @media print, screen and (min-width: 40em) {
+    box-shadow: none;
+  }
+}
+
+.topbar__search {
+
+  form:first-child {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  input, input:focus {
+    // background: darken( $title-bar-background, 10%);
+    background: none;
+    border: none;
+    outline: none;
+    color: darken($official_color_blue, 20%);
+    text-align: right;
+
+    &::placeholder {
+      color: $official_color_blue;
+      text-transform: lowercase;
+    }
+  }
+
+  button {
+    padding: 0 .5rem;
+    border: none;
+    border-left: 1px solid $official_color_blue;
+    background: none;
+    vertical-align: middle;
+
+    svg {
+      color: $official_color_blue;
+    }
+
+    &:hover, &:focus {
+      background: none;
+      transition: 0s;
+
+      svg {
+        color: $official_color_red;
+      }
+    }
+
+    @media print, screen and (min-width: 40em) {
+      height: 25px;
+      padding: 0 .2rem;
+      margin: .5rem 0;
+
+      svg {
+        position: relative;
+        top: 1px;
+      }
+    }
+  }
+}
+
+.custom-separator {
+  display: flex;
+  box-shadow: 0px 2px 4px 0px rgba(0,0,0,.5);
+
+  span {
+    display: inline-block;
+    height: 3px;
+    flex-grow: 1;
+
+    &:nth-child(1) {
+      background-color: $official_color_blue;
+    }
+
+    &:nth-child(2) {
+      background-color: $official_color_white;
+    }
+
+    &:nth-child(3) {
+      background-color: $official_color_red;
+    }
+  }
+}
+
+.off-canvas .close-button {
+  color: $official_color_red;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.search-off-canvas-holder {
+  border-top: 1px solid $dark-gray;
+}
+
+.usermenu-off-canvas-holder .usermenu-off-canvas a {
+  color: $dark-gray;
+}
+
+// ------------------------------------------------------------------
+// FOOTER
+
+
+.main-footer {
+  background-color: #012e54;
+  padding-top: 0;
+
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  a {
+    color: white;
+  }
+}
+
+.custom-footer {
+  text-align: center;
+
+  .official_img_footer {
+    max-width: 70px;
+  }
+
+  .custom-footer-top {
+    padding-top: 2.5em;
+    background-color: white;
+  }
+
+  .custom-footer-bottom {
+    padding: 2.5em .5em;
+
+    .icon {
+      color: white;
+      font-size: 80%;
+    }
+
+    .official_url {
+      color: white;
+      font-size: 80%;
+      text-transform: uppercase;
+
+      &:hover {
+        text-decoration: none;
+        border-bottom: 1px solid white;
+      }
+    }
+  }
+}
+
+.mini-footer {
+  background-color: #012e54;
+
+  a {
+    color: white;
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .decidim-logo {
+    display: flex;
+    flex-grow: 0;
+    width: auto;
+    margin: 0 .5rem;
+  }
+
+  img {
+    height: 1rem;
+  }
+
+  .mf-text {
+    font-size: 80%;
+    line-height: 1rem;
+
+    a {
+      font-weight: 600;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
+
+// ------------------------------------------------------------------
+// SIGNUP / SIGNIN / PROFILE
+
+.button--social {
+  margin: 0 auto;
+  white-space: nowrap;
+
+  $icon-height: 32px;
+
+  // height: 2.8em;
+  padding-bottom: 0.6em;
+  margin-bottom: 1rem;
+
+  .button--social__icon {
+    display: block;
+    float: left;
+    padding: .35em .5em;
+
+    .icon {
+      width: 2em;
+      height: 2em;
+    }
+  }
+
+  .button--label {
+    display: inline-block;
+    padding-top: 0.6em;
+    line-height: 1.5rem;
+  }
+}
+
+.button--france_connect,
+.button--france_connect_uid,
+.button--france_connect_profile {
+  background-color: #034EA2;
+
+  &:hover {
+    background-color: #034EA2;
+  }
+
+  .button--label b {
+    white-space: nowrap;
+  }
+}
+
+.button--social--custom {
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  background-color: transparent;
+  max-width: 282px;
+
+  &:hover, &:focus {
+    background-color: transparent;
+  }
+}
+
+.social-register {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+a.button.small > .icon {
+  width: .65em;
+  height: .65em;
+  vertical-align: baseline;
+}
+
+.open-modal-button {
+  font-weight: bold;
+}
+
+.sessions .callout {
+  margin:  0 -3rem 1rem -3rem;
+
+  @media print, screen and (max-width: 640px) {
+    margin: 0 0 1rem 0;
+  }
+}
+
+.callout > form > :last-child {
+  margin-bottom: 0;
+}
+
+.field.custom_agreement {
+  label {
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  input[type=checkbox] {
+    margin-top: 2px;
+    float: left;
+  }
+}
+
+main.anonymous {
+  #user-settings-tabs li:nth-of-type(1),
+  #user-settings-tabs li:nth-of-type(5),
+  #user-settings-tabs li:last-of-type { display: none; }
+}
+
+.omniauth-explanation { margin-bottom: 1.5rem; }
+
+.reveal .section-heading {
+  margin-left: .15rem;
+}
+
+// Hide autorisation handler profile tab
+// #user-settings-tabs > li:nth-child(3) {
+//   display: none;
+// }
+
+.edit_user {
+  .actions {
+    margin-top: 3rem;
+  }
+}
+
+#profile-tabs li:nth-of-type(1),
+#user-settings-tabs li:nth-of-type(2),
+#user-settings-tabs li:nth-of-type(4) { display: none; }
+
+
+// ------------------------------------------------------------------
+// COMPONENTS
+
+.highlighted_proposals .card--proposal {
+  width: 100%;
+}
+
+.filters__section {
+  .select2 option {
+    white-space: normal;
+  }
+}
+
+// ------------------------------------------------------------------
+// INITIATIVES
+
+.initiative-types-select {
+  white-space: normal !important;
+  word-break: break-all !important;
+  overflow-wrap: break-word !important;
+
+  padding-bottom: 0;
+
+  option {
+    position: relative;
+    display: block;
+    margin: 0 -15px 5px  0;
+    padding: 5px 10px;
+    font-size: 90%;
+    line-height: 17px;
+    color: $secondary;
+    border: 1px solid #e8e8e8;
+    border-radius: 3px;
+    cursor: pointer;
+    white-space: normal !important;
+    word-break: break-all !important;
+    overflow-wrap: break-word !important;
+    text-overflow: clip;
+    overflow-x: hidden;
+
+    &:hover {
+      background: #e8e8e8;
+    }
+  }
+
+  &:focus {
+    border-color: #238FF7;
+    option:checked {
+      background: #238FF7;
+      color: white;
+    }
+  }
+}
+
+.initiative {
+  .follow-section { display: none; }
+
+  .tags--initiative {
+    margin-top: 1rem;
+  }
+}
+
+.initiative-description {
+  white-space: pre-line;
+}

@@ -1,0 +1,169 @@
+---
+fr:
+  activemodel:
+    attributes:
+      attachment:
+        attachment_collection_id: Dossier
+        description: Description
+        file: Fichier (*.pdf)
+        title: Titre
+        weight: Ordre de présentation
+      user:
+        full_address: Votre adresse postale
+    models:
+      decidim/attachment_created_event: Pièce jointe
+  decidim:
+    account:
+      show:
+        custom_agreement: "Je certifie être citoyen français ou résidant régulièrement en France, ainsi que l’exactitude des informations du profil"
+        unconfirmed_email: "l'adresse <code>%{email}</code> est en cours de validation.<br/>
+        Un courriel vous a été transmis à cette adresse contenant un lien nous permettant
+        de confirmer son existence."
+    admin:
+      attachments:
+        create:
+          error: Une erreur s'est produite lors de la création d'un nouvelle pièce jointe.
+          success: Pièce jointe créée avec succès.
+        destroy:
+          success: Pièce jointe supprimée avec succès.
+        edit:
+          title: Modifier la pièce jointe
+          update: Mettre à jour
+        index:
+          attachments_title: Pièce(s) jointe(s) (2 maximum)
+        new:
+          create: Envoyer
+          title: Nouvelle pièce jointe
+        update:
+          error: Une erreur s'est produite lors de la mise à jour de cette pièce jointe.
+          success: Pièce jointe mise à jour avec succès.
+      menu:
+        participatory_processes_submenu:
+          attachments: Pièce(s) jointe(s)
+      models:
+        attachment:
+          fields:
+            weight: Ordre de présentation de la pièce jointe
+          name: Pièce jointe
+    authorization_handlers:
+      admin:
+        decidim:
+          help:
+            - Confirmer une identité avec un compte Decidim externe
+        france_connect:
+          help:
+            - Confirmer une identité avec un compte FranceConnect
+        france_connect_uid:
+          help:
+            - Confirmer une identité avec un compte FranceConnect Signataire
+        france_connect_profile:
+          help:
+            - Confirmer une identité avec un compte FranceConnect Auteur
+        saml:
+          help:
+            - Confirmer une identité avec un compte CSAM eID
+      decidim:
+        name: Omniauth Decidim
+        explanation: Confirmer votre identité avec un compte Decidim externe
+      france_connect:
+        name: France Connect
+        explanation: Confirmer votre identité avec un compte FranceConnect
+      france_connect_uid:
+        name: FranceConnect Signataire
+        explanation: Confirmer votre identité avec un compte FranceConnect Signataire
+      france_connect_profile:
+        name: FranceConnect Auteur
+        explanation: Confirmer votre identité avec un compte FranceConnect Auteur
+      saml:
+        name: CSAM eID
+        explanation: Confirmer votre identité avec un compte CSAM eID
+    devise:
+      omniauth_registrations:
+        new:
+          custom_agreement: "Je certifie être citoyen français ou résidant régulièrement en France, ainsi que l’exactitude des informations du profil"
+          registration_info: |-
+            Texte d'information pour la création de compte qui supporte le <code>HTML</code>.
+            <br/><br/>
+            <small>
+              <i>Please change me with translation key <code>decidim.devise.omniauth_registrations.new.registration_info</code><i/>
+            <small/>
+    pages:
+      terms_and_conditions:
+        refuse:
+          modal_body: Si vous refusez, vous ne pourrez pas utiliser la plateforme.
+          modal_btn_continue: Accepter les conditions <br/> et continuer
+          modal_btn_exit: Refuser les conditions <br/> et se déconnecter
+          modal_button: Refuser les conditions d'utilisation
+          modal_close: Fermer la fenêtre
+          modal_title: Refusez-vous vraiment les conditions d'utilisation ?
+    omniauth:
+      france_connect:
+        external:
+          link: "https://franceconnect.gouv.fr/"
+          text: "Qu'est-ce-que FranceConnect ?"
+      france_connect_uid:
+        explanation: "<b>La connexion via FranceConnect en tant que \"Signataire\" permet de garantir votre anonymat</b>,<br/>
+         tout en assurant qu'une pétition n'est signée une seule fois par une même personne physique.<br/>
+        <b>Aucune donnée personnelle n'est récupérée lors de la connexion avec FranceConnect</b>"
+        anonymous_user: "Authentifié(e) avec<br/><b>FranceConnect</b>"
+      france_connect_profile:
+        explanation: "<b>L'auteur d'une pétition ne peut être anonyme.</b><br/>
+        <p>Toutefois, le Sénat ne récupère, via l'authentification FranceConnect \"Auteur\",
+        que les informations suivantes : <br/>
+        nom, prénom(s), date de naissance, adresse électronique et identifiant technique.<br/>
+        <b>Les noms et prénoms des auteurs de pétition sont publiés avec la pétition.</b><br/>
+        Les autres éléments ne sont en aucun cas rendus publics.
+        </p>"
+    system:
+      organizations:
+        omniauth_settings:
+          france_connect_uid:
+            button_path: Chemin de l'image du bouton
+            provider_name: Nom du service
+            site: URL principale du service
+            client_id: ID client
+            client_secret: Clé secrète
+            end_session_endpoint: Endpoint de déconnexion
+            minimum_age: Age minimum
+          france_connect_profile:
+            button_path: Chemin de l'image du bouton
+            provider_name: Nom du service
+            site: URL principale du service
+            client_id: ID client
+            client_secret: Clé secrète
+            end_session_endpoint: Endpoint de déconnexion
+            minimum_age: Age minimum
+    verifications:
+      authorizations:
+        index:
+          title: Liste des autorisations
+      metadata:
+        content:
+          active_email: "<b>Cet utilisateur peut être contacté aux coordonnées suivantes: <p><a href=\"mailto:%{email}\">%{email}</a><br/>%{full_address}</p></b>"
+  devise:
+    mailer:
+      confirmation_instructions:
+        action: Confirmer mon compte
+        greeting: Bonjour %{recipient},
+        instruction: 'Vous pouvez confirmer votre compte email par le lien ci-dessous:'
+        subject: Instructions de confirmation
+      email_changed:
+        action: Confirmer ma nouvelle adresse
+        greeting: Bonjour %{recipient},
+        instruction: 'Nous vous contactons pour vous informer que votre adresse e-mail a été modifiée à %{email}. Vous pouvez la confirmer via le lien ci-dessous:'
+        subject: Courriel modifié
+    shared:
+      links:
+        signed_in_with_provider: "Authentifié(e) avec %{provider} <br/>"
+  layouts:
+    decidim:
+      footer:
+        download_open_data: Données ouvertes
+        official_url: "site de l'assemblée nationale"
+      mailer:
+        footer: À bientôt sur la plateforme de <a href="%{organization_url}">e-pétitions</a> du Sénat.
+      user_profile:
+        authorizations: Voir les autorisations associées à votre compte
+        back_to_account: Retour à votre compte
+      user_menu:
+        admin_dashboard: Administration

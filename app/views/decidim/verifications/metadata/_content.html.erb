@@ -1,0 +1,15 @@
+<div class="reveal__header">
+  <h3 class="card-title"><%= t ".title" %></h3>
+</div>
+
+<div class="card">
+  <%= table_from_data @metadata.select { |k,v| ![:gender, :nickname].include?(k) } %>
+</div>
+
+<div class="card">
+  <div class="callout primary">
+    <p>
+      <%= decidim_sanitize t(".active_email", email: @user.email, full_address: @user.full_address) %>
+    </p>
+  </div>
+</div>
