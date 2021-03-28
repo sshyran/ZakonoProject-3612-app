@@ -1,0 +1,7 @@
+---
+fr:
+  decidim:
+    authorization_handlers:
+      osp_authorization_handler:
+        name: osp authorization handler
+        explanation: explanation
