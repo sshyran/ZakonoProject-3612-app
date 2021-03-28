@@ -1,0 +1,377 @@
+fr:
+  activemodel:
+    assembly:
+      local_area: Périmètre
+    attributes:
+      decidim/user:
+        password: Mot de passe (minimum 6 caractères)
+        password_confirmation: Confirmez votre mot de passe
+      participatory_process:
+        private_space: Espace privé
+      osp_authorization_handler:
+        document_number: Numéro unique
+        postal_code: Code postal
+        birthday: Date de naissance
+      proposal:
+        title: Titre (entre 16 et 150 caractères)
+      user:
+        password: Mot de passe (minimum 6 caractères)
+        password_confirmation: Confirmez votre mot de passe
+    participatory_process:
+      local_area: Périmètre
+      participatory_process_group_id: Groupe de projets
+      promoted: Mis en avant
+    participatory_process_group:
+      participatory_process_ids: Projets liés
+    models:
+      decidim/proposals/endorsing_enabled_event: Activer le module de recommandations
+      decidim/proposals/voting_enabled_event: Activer le module de votes
+  activerecord:
+    attributes:
+      decidim/participatory_process:
+        local_area: Périmètre
+    models:
+      decidim/proposals/proposal_endorsement:
+        one: Recommandation
+        other: Recommandations
+      decidim/proposals/proposal_vote:
+        one: Soutien
+        other: Soutiens
+  decidim:
+    admin:
+      menu:
+        participatory_process_groups: Groupes de projets
+        participatory_processes: Projets
+        participatory_processes_submenu:
+          process_admins: Administrateurs du projet
+      models:
+        participatory_process:
+          fields:
+            created_at: Créé le
+            promoted: Mis en évidence
+            published: Publié
+          name: Projet
+        participatory_process_group:
+          name: Groupes de projets
+        participatory_process_user_role:
+          name: Rôle utilisateur du projet
+      participatory_processes:
+        new:
+          title: nouveau projet
+      participatory_process_copies:
+        new:
+          title: Dupliquer le projet
+      participatory_process_groups:
+        destroy:
+          success: Le groupe de projets a été détruit avec succès.
+        edit:
+          title: Modifier le groupe de projets
+        new:
+          title: Nouveau groupe de projets
+        update:
+          error: Il y a eu une erreur lors de la mise à jour de ce groupe de projets.
+          success: Groupe de projets mis à jour avec succès.
+      participatory_process_publications:
+        create:
+          error: Une erreur s'est produite lors de la publication de ce projet.
+          success: Projet publié avec succès.
+        destroy:
+          error: Une erreur s'est produite lors de la publication de ce projet.
+          success: Projet supprimé avec succès.
+      participatory_process_step_activations:
+        create:
+          error: Une erreur s'est produite lors de l'activation de cette étape du projet.
+          success: Étape de projets activée avec succès.
+      participatory_process_steps:
+        create:
+          error: Une erreur s'est produite lors de la création d'une nouvelle étape du projet.
+          success: Étape du projet créée avec succès.
+        destroy:
+          error:
+            active_step: Vous ne pouvez pas supprimer l'étape active du projet.
+            last_step: Vous ne pouvez pas supprimer la dernière étape d'un projet.
+          success: L'étape du projet a été supprimée avec succès.
+        edit:
+          title: Modifier l'étape du projet
+        new:
+          title: Nouvelle étape du projet
+        ordering:
+          error: Une erreur s'est produite lors de la réorganisation des étapes du projet.
+        update:
+          error: Une erreur s'est produite lors de la mise à jour de cette étape du projet.
+          success: Étape du projet mise à jour avec succès.
+      participatory_process_user_roles:
+        create:
+          error: Une erreur s'est produite lors de l'ajout d'un utilisateur pour ce projet.
+          success: Utilisateur créé avec succès pour ce projet.
+        destroy:
+          success: L'utilisateur a été supprimé avec succès pour ce projet.
+        edit:
+          title: Mettre à jour l'utilisateur du projet.
+        index:
+          process_admins_title: Administrateurs du projet
+        new:
+          title: Nouvel utilisateur du projet.
+        update:
+          error: Une erreur s'est produite lors de la mise à jour d'un utilisateur pour ce projet.
+          success: L'utilisateur a été mis à jour avec succès pour ce projet.
+      participatory_processes:
+        create:
+          error: Une erreur s'est produite lors de la création d'un nouveau projet.
+          success: Projet créé avec succès. Configurez maintenant ses étapes.
+        destroy:
+          success: Projet supprimé avec succès.
+        index:
+          not_published: Non publié
+          published: Publié
+          title: Nouveau projet
+        update:
+          error: Une erreur s'est produite lors de la mise à jour de ce projet.
+          success: Projet mis à jour avec succès.
+      participatory_processes_copies:
+        create:
+          error: Une erreur s'est produite lors de la duplication de ce projet.
+          success: Projet dupliqué avec succès.
+      participatory_processes_group:
+        create:
+          error: Une erreur s'est produite lors de la création d'un nouveau groupe de projets.
+          success: Groupe de projets créé avec succès.
+      titles:
+        navbar_links: Liens de navigation
+        participatory_process_groups: Groupes de projets
+        participatory_processes: Projets
+    accountability:
+      results:
+        show:
+          stats:
+            votes: Soutiens
+    assemblies:
+      show:
+        local_area: Périmètre
+      statistics:
+        endorsement_count: Recommandations
+        meetings_count: Réunions
+        votes_count: Soutiens
+    authorization_handlers:
+      osp_authorization_handler:
+        explanation: Vérifier votre identité en saisissant un numéro unique
+        fields:
+          document_number: Numéro unique
+          postal_code: Code postal
+          birthday: Date de naissance
+        name: Formulaire de vérification d'identité
+      osp_authorization_workflow:
+        name: Procédure d'autorisation
+    components:
+      add_comment_form:
+        title: Ajouter un commentaire
+      comment:
+        report:
+          description: Ce contenu est-il inapproprié ?
+      proposals:
+        settings:
+          global:
+            vote_limit: Limite de soutiens par utilisateur
+          step:
+            endorsements_blocked: Bloquer les recommandations
+            endorsements_enabled: Activer le module de recommandations
+            votes_blocked: Bloquer les soutiens/votes
+            votes_enabled: Activer le module de soutien
+            votes_weight_enabled: Activer le module de votes "Pour/Contre/Abstention"
+            votes_hidden: Cacher les soutiens/votes (si le module de soutiens/votes est activé, le décompte des soutiens/votes sera caché)
+    debates:
+      debates:
+        filters:
+          citizens: Initiés par les citoyens
+          official: Initiés par le Département
+        models:
+          debate:
+            fields:
+              official_debate: Débat initié par le Département
+    devise:
+      omniauth_registrations:
+        new:
+          nickname_help: Cet identifiant est public et unique sur cette plateforme ; il permet aux autres utilisateurs de vous suivre, de vous contacter ou de vous mentionner dans leurs commentaires. Il s’affichera précédé d’un « @ » ; il ne doit pas contenir d’espace ni de caractère spécial.
+          username_help: Le nom est public et apparaît dans votre profil et sur vos messages. Dans le but de garantir l'anonymat, vous pouvez choisir n'importe quel nom. Pour contribuer au nom d'une organisation (association, entreprise, etc.), vous pouvez saisir le nom de cette organisation.
+      registrations:
+        new:
+          nickname_help: Cet identifiant est public et unique sur cette plateforme ; il permet aux autres utilisateurs de vous suivre, de vous contacter ou de vous mentionner dans leurs commentaires. Il s’affichera précédé d’un « @ » ; il ne doit pas contenir d’espace ni de caractère spécial.
+          terms: la Charte de participation
+          username_help: Le nom est public et apparaît dans votre profil et sur vos messages. Dans le but de garantir l'anonymat, vous pouvez choisir n'importe quel nom. Pour contribuer au nom d'une organisation (association, entreprise, etc.), vous pouvez saisir le nom de cette organisation.
+    event:
+      proposals:
+        creation_enabled:
+          endorsing_enabled:
+            email_intro: 'Vous pouvez recommander les différentes propositions dans %{participatory_space_title} ! Commencez à participer en vous rendant sur cette page :'
+            email_subject: Vous pouvez désormais recommander des propositions dans %{participatory_space_title}
+            notification_title: Vous pouvez maintenant commencer à <a href="%{resource_path}">recommander les propositions</a> dans <a href="%{participatory_space_url}">%{participatory_space_title}</a>
+          proposal_endorsed:
+            email_intro: "%{endorser_name} %{endorser_nickname}, que vous suivez, vient de recommander une proposition qui pourrait vous intéresser, consultez-la et contribuez :"
+            email_subject: "%{endorser_nickname} a soutenu une nouvelle proposition"
+            notification_title: La proposition <a href="%{resource_path}">%{resource_title}</a> a été soutenue par <a href="%{endorser_path}">%{endorser_name} %{endorser_nickname}</a>.
+          voting_enabled:
+            email_intro: 'Vous pouvez recommander les propositions de %{participatory_space_title} ! Participez ici :'
+            email_subject: Vous pouvez désormais soutenir les propositions dans %{participatory_space_title}
+            notification_title: Vous pouvez maintenant commencer <a href="%{resource_path}">à soutenir les propositions</a> de <a href="%{participatory_space_url}">%{participatory_space_title}</a>
+    menu:
+      processes: Projets
+    pages:
+      home:
+        extended:
+          how_to_participate: Comment participer ?
+        statistics:
+          assemblies_count: Assemblée
+          endorsements_count: Recommandations
+          headline: Activité sur %{organization}
+          processes_count: Projets
+          votes_count: Soutiens
+    participatory_process_groups:
+      show:
+        group_participatory_processes: 'Projet pour %{group}'
+        title: Groupes de projets
+    participatory_process_steps:
+      index:
+        process_steps: Étapes du projet
+        title: Étapes du projet
+    participatory_processes:
+      index:
+        title: Projets
+      order_by_processes:
+        active: Actifs
+        all: Tous
+        past: Passés
+      pages:
+        home:
+          highlighted_processes:
+            active_processes: Projets en cours
+            see_all_processes: Voir tous les projets
+      show:
+        local_area: Périmètre
+      statistics:
+        endorsement_count: Recommandations
+        processes_count: Projets
+        votes_count: Soutiens
+    participatory_spaces:
+      highlighted_proposals:
+        proposals: Quelques propositions
+    proposals:
+      admin:
+        shared:
+          info_proposal:
+            proposal_votes_count: Nombre de votes
+            proposal_votes_weight: Nombre de votes
+      admin_log:
+        proposal:
+          create: "%{user_name} a créé la proposition %{resource_name} sur l'espace %{space_name} en tant que proposition du Département"
+      models:
+        proposal:
+          fields:
+            endorsements: Recommandations
+            official_proposal: Proposition du Département
+            votes: Soutiens
+      proposal_endorsements:
+        create:
+          error: Des erreurs sont survenues au moment de recommander la proposition.
+      proposal_endorsements_helper:
+        endorsement_button:
+          already_endorsed: Recommandée
+          endorse: Recommander
+      proposal_votes:
+        create:
+          error: Des erreurs se sont produites lors du soutien de la proposition.
+      proposals:
+        endorsement_identities_cabin:
+          endorse: Recommander
+        endorsements_card_row:
+          endorse: Recommander
+        filters:
+          official: Propositions du Département
+          voted: Ne montrer que les propositions que j'ai soutenues
+        linked_proposals:
+          proposal_votes:
+            one: soutien
+            other: soutiens
+        show:
+          endorsements_list: Liste des recommandations
+          withdraw_confirmation: "Êtes-vous sûr de vouloir retirer cette proposition ? Si vous retirez cette proposition, celle-ci continuera à être visible de tous. Si vous souhaitez qu’elle ne soit plus visible parce qu’elle contient par exemple des informations personnelles, il faut la signaler en cliquant sur le drapeau rose sous le titre de la proposition, après la date : les administrateurs de la plateforme la masqueront alors."
+        orders:
+          most_voted: Les plus soutenues
+        vote_button:
+          already_voted: Déjà soutenue
+          already_voted_hover: Retirer le soutien
+          maximum_votes_reached: Nombre maximum de soutiens atteint
+          no_votes_remaining: Aucun soutien restant
+          vote: Soutenir
+          votes_blocked: Soutiens désactivés
+        votes_count:
+          count:
+            one: SOUTIEN
+            other: SOUTIENS
+          most_popular_proposal: Proposition la plus populaire
+          need_more_votes: Besoin de plus de soutiens
+        vote_weight:
+          count:
+            one: SOUTIEN
+            other: SOUTIENS
+          maximum_votes_reached: Nombre maximum de soutiens atteint
+          most_popular_proposal: Proposition la plus populaire
+          need_more_votes: Besoin de plus de soutiens
+          neutral : Neutre
+          no_votes_remaining: Aucun soutien restant
+          votes_blocked: Soutiens désactivés
+        voting_rules:
+          can_accumulate_supports_beyond_threshold:
+            description: Chaque proposition doit rassembler plus de %{limit} soutiens
+          threshold_per_proposal:
+            description: Pour être acceptées, les propositions doivent atteindre %{limit} soutiens
+          title: 'Le soutien est soumis aux règles suivantes :'
+          vote_limit:
+            description: Vous pouvez soutenir %{limit} propositions au maximum.
+            votes: Soutiens
+    shared:
+      flag_modal:
+        description: Ce contenu est-il inapproprié ?
+    amendments:
+      emendation:
+        announcement:
+          evaluating: |-
+            Cet amendement pour le %{amendable_type} %{proposal_link}
+            est en cours d’évaluation.
+    verifications:
+      authorizations:
+        first_login:
+          actions:
+            osp_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
+            osp_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
+  devise:
+    failure:
+      user:
+        already_authenticated: Vous êtes déjà connecté.
+        inactive: Votre compte n'est pas encore activé.
+        invalid: "%{authentication_keys} ou mot de passe invalide."
+        invited: Vous avez une invitation en attente, acceptez-la pour terminer la création de votre compte.
+        last_attempt: Vous avez encore une tentative avant que votre compte soit verrouillé.
+        locked: Ton compte est bloqué.
+        not_found_in_database: "%{authentication_keys} ou mot de passe invalide."
+        timeout: Votre session a expiré. Veuillez vous connecter à nouveau pour continuer.
+        unauthenticated: Vous devez vous connecter ou vous inscrire avant de continuer.
+    invitations:
+      edit:
+        nickname_help: Cet identifiant est public et unique sur cette plateforme ; il permet aux autres utilisateurs de vous suivre, de vous contacter ou de vous mentionner dans leurs commentaires. Il s’affichera précédé d’un « @ » ; il ne doit pas contenir d’espace ni de caractère spécial.
+  faker:
+    address:
+      country_code: ['FR','FR0','FR1','FR2','FR3','FR4','FR5','FR6','FR7','FR8','FR9']
+  layouts:
+    decidim:
+      footer:
+        download_open_data: Données ouvertes
+  faker:
+    address:
+      country_code: ['FR','FR0','FR1','FR2','FR3','FR4','FR5','FR6','FR7','FR8','FR9']
+      participatory_processes:
+        index:
+          promoted_processes: A la une
+        order_by_processes:
+          processes:
+            one: '%{count} projet'
+            other: '%{count} projets'
