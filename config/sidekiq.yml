@@ -1,0 +1,15 @@
+:concurrency: 5
+:queues:
+- default
+- mailers
+- newsletter
+- events
+- metrics
+
+:schedule:
+  CalculateAllMetrics:
+    every: ['24h', first_in: '1m']
+    class: CalculateAllMetricsJob
+  PreloadOpenData:
+    every: ['24h', first_in: '1m']
+    class: PreloadOpenDataJob
