@@ -1,5 +1,5 @@
 ## Технічне рішення до Проєкту ЗУ №3612
-###### (від 09.06.2020 р.)
+###### Від 09.06.2020 р. Пропозиція: взяти за основу
 #### OSP App, Original English Transcript:
 
 Citizen Participation and Open Government application.
