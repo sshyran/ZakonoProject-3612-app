@@ -1,0 +1,325 @@
+// // Variables
+//
+
+// $primary: #ef604d;
+// $primary: #005E8B;
+// $secondary: #ef604d;
+// $secondary: #599aa6;
+$secondary: #e94b4e;
+// $success: #57d685;
+// $warning: #ffae00;
+// $alert: #ec5840;
+//
+// $proposals: #238FF7;
+// $actions: #57D685;
+// $debates: #FA6C96;
+// $meetings: #FABC6C;
+//
+// $twitter: #55acee;
+// $facebook: #3b5998;
+// $google: #dd4b39;
+
+@import "decidim/application";
+
+// @import "fontface";
+// TODO : PR on decidim-core/app/assets/stylesheets/decidim/utils/_settings.scss to add !default on this variable.
+// $body-font-family: 'Roboto Slab','Roboto', 'Source Sans Pro', Helvetica, Arial, sans-serif;
+
+// body, h1, h2, h3, h4, h5, h6, p, a, span {
+//   font-family: $body-font-family;
+// }
+
+$title-bar-background: #FFFFFF;
+$navbar-background: darken( $title-bar-background, 10%);
+
+.initiative-types-select {
+  white-space: normal !important;
+  word-break: break-all !important;
+  overflow-wrap: break-word !important;
+
+  padding-bottom: 0;
+
+  option {
+    position: relative;
+    display: block;
+    margin: 0 -15px 5px  0;
+    padding: 5px 10px;
+    font-size: 90%;
+    line-height: 17px;
+    color: $secondary;
+    border: 1px solid #e8e8e8;
+    border-radius: 3px;
+    cursor: pointer;
+    white-space: normal !important;
+    word-break: break-all !important;
+    overflow-wrap: break-word !important;
+    text-overflow: clip;
+    overflow-x: hidden;
+
+    &:hover {
+      background: #e8e8e8;
+    }
+  }
+
+  &:focus {
+    border-color: #238FF7;
+    option:checked {
+      background: #238FF7;
+      color: white;
+    }
+  }
+}
+
+.highlighted_proposals .card--proposal {
+  width: 100%;
+}
+
+// Hide autorisation handler profile tab
+// #user-settings-tabs > li:nth-child(3) {
+//   display: none;
+// }
+
+.main-footer__badge {
+  text-align: center;
+}
+
+@media print, screen and (min-width: 64em) {
+  .main-footer__badge {
+    position: relative;
+    text-align: left;
+  }
+}
+
+.button--social {
+  margin: 0 auto;
+  white-space: nowrap;
+
+  $icon-height: 32px;
+
+  // height: 2.8em;
+  padding-bottom: 0.6em;
+  margin-bottom: 1rem;
+
+  .button--social__icon {
+    display: block;
+    float: left;
+    padding: .35em .5em;
+
+    .icon {
+      width: 2em;
+      height: 2em;
+    }
+  }
+
+  .button--label {
+    display: inline-block;
+    padding-top: 0.6em;
+    line-height: 1.5rem;
+  }
+}
+
+.button--france_connect,
+.button--france_connect_uid,
+.button--france_connect_profile {
+  background-color: #034EA2;
+
+  &:hover {
+    background-color: #034EA2;
+  }
+
+  .button--label b {
+    white-space: nowrap;
+  }
+
+}
+
+.button--social--custom {
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  background-color: transparent;
+  max-width: 282px;
+
+  &:hover, &:focus {
+    background-color: transparent;
+  }
+}
+
+.social-register {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.topbar__user__logged .dropdown.menu > li.is-dropdown-submenu-parent {
+  & > a.user-menu {
+    display:flex ;
+    align-items: center;
+    padding: 0 1rem 0 0;
+
+    .user-menu--icon {
+      .icon {
+        width: 2.5em;
+        height: 2.5em;
+      }
+    }
+
+    .user-menu--label {
+      font-size: .65rem;
+      margin: 0 .5rem;
+
+      b {
+        font-size: .85rem;
+        line-height: 1rem;
+      }
+    }
+
+    &::after{ display: block; }
+    &:hover::after { border-top-color: $secondary !important; }
+  }
+
+  &.is-active > a.user-menu::after { border-top-color: $secondary !important; }
+
+  .is-dropdown-submenu {
+    margin-top: .75rem;
+    min-width: 100%;
+
+    .is-dropdown-submenu-item {
+      text-align: center;
+      text-transform: uppercase;
+      padding: .15rem 0;
+      font-size: 90%;
+
+      &.small a {
+        color: $primary;
+        font-variant: small-caps;
+      }
+    }
+  }
+}
+
+a.button.small > .icon {
+  width: .65em;
+  height: .65em;
+  vertical-align: baseline;
+}
+
+.open-modal-button {
+  font-weight: bold;
+}
+
+.sessions .callout {
+  margin:  0 -3rem 1rem -3rem;
+
+  @media print, screen and (max-width: 640px) {
+    margin: 0 0 1rem 0;
+  }
+}
+
+.main-footer .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mini-footer .row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .decidim-logo {
+    display: flex;
+    flex-grow: 0;
+    width: auto;
+    margin: 0 .5rem;
+  }
+
+  img {
+    height: 1rem;
+  }
+
+  .mf-text {
+    font-size: 80%;
+    line-height: 1rem;
+
+    a {
+      font-weight: 600;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
+
+.edit_user {
+  .actions {
+    margin-top: 3rem;
+  }
+}
+
+// #profile-tabs li:nth-of-type(1),
+// #user-settings-tabs li:nth-of-type(2),
+// #user-settings-tabs li:nth-of-type(4) { display: none; }
+
+// main.anonymous {
+//   #user-settings-tabs li:nth-of-type(1),
+//   #user-settings-tabs li:nth-of-type(5),
+//   #user-settings-tabs li:last-of-type { display: none; }
+// }
+
+.reveal .section-heading {
+  margin-left: .15rem;
+}
+
+.initiative {
+  // .follow-section { display: none; }
+
+  .tags--initiative {
+    margin-top: 1rem;
+  }
+}
+
+.omniauth-explanation { margin-bottom: 1.5rem; }
+
+// .topbar__search, .topbar__notifications { display: none; }
+
+.initiative-description {
+  white-space: pre-line;
+}
+
+.filters__section {
+  .select2 option {
+    white-space: normal;
+  }
+}
+
+.card--list__data table.metadata {
+  tr {
+    background-color: transparent !important;
+    border-bottom: 1px solid #f2f2f2;
+  }
+
+  .key {
+    font-variant: small-caps;
+    text-transform: lowercase;
+    text-align: right;
+    border-right: 1px solid #f2f2f2;
+  }
+
+  .value {
+    text-transform: none;
+    color: #3d393c;
+    text-align: left;
+  }
+}
+
+.icon.inline-error {
+  font-size: 75%;
+  color: $alert;
+  margin-left: .5rem;
+}
+
+label[for="initiative_no_signature"] {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}

@@ -1,0 +1,113 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  decidim:
+    authorization_handlers:
+      admin:
+        decidim:
+          help:
+            - Validate with an external Decidim account
+        dummy_authorization_handler:
+          help:
+            - Validate with your external Decidim account
+        saml:
+          help:
+            - Validate with a CSAM eID account
+      decidim:
+        name: Omniauth Decidim
+        explanation: Validate with your external Decidim account
+      dummy_authorization_handler:
+        name: BOSA dummy authorization
+        explanation: Add additional informations to your account
+      saml:
+        fields:
+          date_of_birth: Date of birth
+        name: CSAM eID
+        explanation: Validate with your CSAM eID account
+    authorization_modals:
+      content:
+        unauthorized:
+          explanation: Sorry, you are not allowed to perfom this action
+          invalid_field: "%{field} is not valid. %{value}"
+          ok: Close
+          title: Action forbidden
+    devise:
+      omniauth_registrations:
+        new:
+          registration_info: |-
+            Registration info (this text supports <code>HTML</code>).
+            <br/><br/>
+            <small>
+              <i>Please change me with translation key <code>decidim.devise.omniauth_registrations.new.registration_info</code><i/>
+            <small/>
+    system:
+      organizations:
+        omniauth_settings:
+          decidim:
+            client_id: Client ID
+            client_secret: Client secret
+            provider_name: Provider name
+            site_url: Site url
+          saml:
+            provider_name: Provider name
+            icon_path: Icon path
+            idp_sso_target_url: Provider URL (idp_sso_target_url)
+            assertion_consumer_service_url: Callback URL (assertion_consumer_service_url)
+            authn_context: Authentication context (authn_context)
+            issuer: Issuer URL
+            idp_slo_target_url: Logout URL (idp_slo_target_url)
+            idp_cert_fingerprint : Certificate fingerprint
+            idp_cert: Certificate
+            idp_key: Certificate private key
+            person_services_wsdl: Person Services WSDL URL
+            person_services_cert: Person Services Certificate
+            person_services_ca_cert: Person Services CA Certificate
+            person_services_key: Person Services private key
+            person_services_secret: Person Services private key secret
+            person_services_proxy: Person Services proxy URL
+            person_services_fallback_rrn: Person Services fallback RRN
+            enable_scope_mapping: 'Enable scope mapping ("true" or "false")'
+            scope_mapping_level_id: Scope mapping level Id (scope_type_id)
+    verifications:
+      authorizations:
+        index:
+          title: Authorizations list
+        first_login:
+          actions:
+            saml: Validate with your CSAM eID account
+            dummy_authorization_handler: Add additional informations to your account
+  layouts:
+    decidim:
+      footer:
+        download_open_data: Open data
+      user_profile:
+        back_to_account: Back to account

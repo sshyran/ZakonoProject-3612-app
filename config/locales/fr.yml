@@ -1,0 +1,151 @@
+---
+fr:
+  activemodel:
+    attributes:
+      attachment:
+        attachment_collection_id: Dossier
+        description: Description
+        file: Fichier (*.pdf)
+        title: Titre
+        weight: Ordre de présentation
+    models:
+      decidim/attachment_created_event: Pièce jointe
+  decidim:
+    account:
+      show:
+        unconfirmed_email: "l'adresse <code>%{email}</code> est en cours de validation.<br/>
+        Un courriel vous a été transmis à cette adresse contenant un lien nous permettant
+        de confirmer son existence."
+    admin:
+      attachments:
+        create:
+          error: Une erreur s'est produite lors de la création d'un nouvelle pièce jointe.
+          success: Pièce jointe créée avec succès.
+        destroy:
+          success: Pièce jointe supprimée avec succès.
+        edit:
+          title: Modifier la pièce jointe
+          update: Mettre à jour
+        index:
+          attachments_title: Pièce(s) jointe(s) (2 maximum)
+        new:
+          create: Envoyer
+          title: Nouvelle pièce jointe
+        update:
+          error: Une erreur s'est produite lors de la mise à jour de cette pièce jointe.
+          success: Pièce jointe mise à jour avec succès.
+      menu:
+        participatory_processes_submenu:
+          attachments: Pièce(s) jointe(s)
+      models:
+        attachment:
+          fields:
+            weight: Ordre de présentation de la pièce jointe
+          name: Pièce jointe
+    authorization_handlers:
+      admin:
+        decidim:
+          help:
+            - Confirmer une identité avec un compte Decidim externe
+        saml:
+          help:
+            - Confirmer une identité avec un compte CSAM eID
+      decidim:
+        name: Omniauth Decidim
+        explanation: Confirmer votre identité avec un compte Decidim externe
+      dummy_authorization_handler:
+        name: BOSA dummy authorization
+        explanation: Ajouter des informations complémentaires à votre profil
+      saml:
+        fields:
+          date_of_birth: Votre date de naissance
+        name: CSAM eID
+        explanation: Confirmer votre identité avec un compte CSAM eID
+    authorization_modals:
+      content:
+        unauthorized:
+          explanation: Désolé, vous ne pouvez pas effectuer cette action.
+          invalid_field: "%{field} n'est pas valide. %{value}"
+          ok: Fermer
+          title: Action impossible
+    devise:
+      omniauth_registrations:
+        new:
+          registration_info: |-
+            Texte d'information pour la création de compte qui supporte le <code>HTML</code>.
+            <br/><br/>
+            <small>
+              <i>Please change me with translation key <code>decidim.devise.omniauth_registrations.new.registration_info</code><i/>
+            <small/>
+    pages:
+      terms_and_conditions:
+        refuse:
+          modal_body: Si vous refusez, vous ne pourrez pas utiliser la plateforme.
+          modal_btn_continue: Accepter les conditions <br/> et continuer
+          modal_btn_exit: Refuser les conditions <br/> et se déconnecter
+          modal_button: Refuser les conditions d'utilisation
+          modal_close: Fermer la fenêtre
+          modal_title: Refusez-vous vraiment les conditions d'utilisation ?
+    system:
+      organizations:
+        omniauth_settings:
+          saml:
+            provider_name: Provider name
+            icon_path: Icon path
+            idp_sso_target_url: Provider URL (idp_sso_target_url)
+            assertion_consumer_service_url: Callback URL (assertion_consumer_service_url)
+            authn_context: Authentication context (authn_context)
+            issuer: Issuer URL
+            idp_slo_target_url: Logout URL (idp_slo_target_url)
+            idp_cert_fingerprint : Certificate fingerprint
+            idp_cert: Certificate
+            idp_key: Certificate private key
+            person_services_wsdl: Person Services WSDL URL
+            person_services_cert: Person Services Certificate
+            person_services_ca_cert: Person Services CA Certificate
+            person_services_key: Person Services private key
+            person_services_secret: Person Services private key secret
+            person_services_proxy: Person Services proxy URL
+            person_services_fallback_rrn: Person Services fallback RRN
+            enable_scope_mapping: 'Enable scope mapping ("true" or "false")'
+            scope_mapping_level_id: Scope mapping level Id (scope_type_id)
+    verifications:
+      authorizations:
+        index:
+          title: Liste des autorisations
+        first_login:
+          actions:
+            saml: Confirmer votre identité avec un compte CSAM eID
+            dummy_authorization_handler: Ajouter des informations complémentaires à votre profil
+      metadata:
+        content:
+          active_email: "<b>Cet utilisateur peut être contacté via l'adresse de courriel <br/><a href=\"mailto:%{email}\">%{email}</a></b>"
+      omniauth:
+        errors:
+          minimum_age: Vous devez avoir au moins %{minimum_age} ans.
+  devise:
+    mailer:
+      confirmation_instructions:
+        action: Confirmer mon compte
+        greeting: Bonjour %{recipient},
+        instruction: 'Vous pouvez confirmer votre compte email par le lien ci-dessous:'
+        subject: Instructions de confirmation
+      email_changed:
+        action: Confirmer ma nouvelle adresse
+        greeting: Bonjour %{recipient},
+        instruction: 'Nous vous contactons pour vous informer que votre adresse e-mail a été modifiée à %{email}. Vous pouvez la confirmer via le lien ci-dessous:'
+        subject: Courriel modifié
+    shared:
+      links:
+        signed_in_with_provider: "Authentifié(e) avec %{provider} <br/>"
+  layouts:
+    decidim:
+      footer:
+        download_open_data: Données ouvertes
+      mailer:
+        footer: <a href="%{organization_url}">%{organization_name}</a>
+      user_profile:
+        authorizations: Voir les autorisations associées à votre compte
+        back_to_account: Retour à votre compte
+      user_menu:
+        admin_dashboard: Administration

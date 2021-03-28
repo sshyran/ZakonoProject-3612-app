@@ -1,0 +1,14 @@
+<p>
+  <%= t("devise.mailer.confirmation_instructions.greeting", recipient: @initiative.author.name) %>
+</p>
+<br/>
+
+<p>
+  <%== t "decidim.initiatives.initiatives_mailer.creation_subject", title: translated_attribute(@initiative.title) %>.
+</p>
+<br/>
+
+<p>
+  <%== t("decidim.initiatives.initiatives_mailer.more_information") %>
+</p>
+<br/>
