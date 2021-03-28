@@ -1,0 +1,53 @@
+fr:
+  decidim:
+    admin:
+      profiles:
+        eid_verified: Vérifié.e e-ID/itsme
+      participatory_process:
+        private_space: Espace privé
+      osp_authorization_handler:
+        document_number: Numéro unique
+        postal_code: Code postal
+        birthday: Date de naissance
+    authorization_handlers:
+      osp_authorization_handler:
+        explanation: Vérifier votre identité en saisissant un numéro unique
+        fields:
+          document_number: Numéro unique
+          postal_code: Code postal
+          birthday: Date de naissance
+        name: Formulaire de vérification d'identité
+      osp_authorization_workflow:
+        name: Procédure d'autorisation
+    devise:
+      omniauth_callbacks:
+        saml: e-ID ou via itsme
+      omniauth_registrations:
+        saml: e-ID ou via itsme
+      shared:
+        links:
+          saml: e-ID ou via itsme
+    verifications:
+      authorizations:
+        first_login:
+          actions:
+            osp_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
+            osp_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
+        new:
+          authorize_with: Complétez les informations de votre profil
+  devise:
+    omniauth_callbacks:
+      saml: e-ID ou via itsme
+    omniauth_registrations:
+      saml: e-ID ou via itsme
+    shared:
+      links:
+        saml: e-ID ou via itsme
+  trads:
+    show_traduction: Voir la traduction
+    show_the_original: Voir l'original
+    automatic_translation: Traduction automatique par %{trad_service}
+  layouts:
+    decidim:
+      footer:
+        download_open_data: Données ouvertes
