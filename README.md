@@ -1,5 +1,5 @@
 ## Технічне рішення до Проєкту ЗУ №3612
-###### (від від 09.06.2020 р.)
+###### (від 09.06.2020 р.)
 #### OSP App, Original English Transcript:
 
 Citizen Participation and Open Government application.
