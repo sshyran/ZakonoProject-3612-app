@@ -1,0 +1,54 @@
+fr:
+  activemodel:
+    attributes:
+      participatory_process:
+        private_space: Espace privé
+      osp_authorization_handler:
+        document_number: Numéro unique
+        postal_code: Code postal
+        birthday: Date de naissance
+  decidim:
+    authorization_handlers:
+      osp_authorization_handler:
+        explanation: Vérifier votre identité en saisissant un numéro unique
+        fields:
+          document_number: Numéro unique
+          postal_code: Code postal
+          birthday: Date de naissance
+        name: Formulaire de vérification d'identité
+      osp_authorization_workflow:
+        name: Procédure d'autorisation
+    verifications:
+      authorizations:
+        first_login:
+          actions:
+            osp_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
+            osp_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
+  devise:
+    failure:
+      user:
+        already_authenticated: Vous êtes déjà connecté.
+        inactive: Votre compte n'est pas encore activé.
+        invalid: "%{authentication_keys} ou mot de passe invalide."
+        invited: Vous avez une invitation en attente, acceptez-la pour terminer la création de votre compte.
+        last_attempt: Vous avez encore une tentative avant que votre compte soit verrouillé.
+        locked: Ton compte est bloqué.
+        not_found_in_database: "%{authentication_keys} ou mot de passe invalide."
+        timeout: Votre session a expiré. Veuillez vous connecter à nouveau pour continuer.
+        unauthenticated: Vous devez vous connecter ou vous inscrire avant de continuer.
+    mailer:
+      invitation_instructions:
+        accept_until: Les participations seront définitivement clôturées le dimanche 2 décembre à 23h59.
+        hello: Bonjour %{email},
+        ignore: |-
+          En cas de question, vous pouvez contacter rentree2019@mairie-orsay.fr ou vous rendre au pôle accueil famille.
+          Attention : votre compte ne sera pas validé avant d'avoir cliqué sur le lien ci-dessus.
+        invited_you_as_admin: "%{invited_by} vous a invité en tant qu'administrateur de l'espace - %{application} -. Vosu pouvez accepter en cliquant sur le lien ci-dessous."
+        accept: Accepter l'invitation
+        invited_you_custom_1: |-
+          La concertation en ligne sur les rythmes scolaires et périscolaires pour la rentrée 2019 à Orsay ouverte par David Ros, maire d'Orsay, se termine ce dimanche 2 décembre à 23h59.
+          Cliquez sur le lien ci-dessous pour choisir votre pseudonyme et votre mot de passe, puis accédez au questionnaire.
+        invited_you_custom_2: |-
+          Pour accéder au questionnaire, vous devez cliquer sur le lien ci-dessous et choisir votre pseudonyme et votre mot de passe.
+      invite_private_user:
+        subject: "Derniers jours pour répondre à la consultation sur la rentrée 2019 à Orsay"
